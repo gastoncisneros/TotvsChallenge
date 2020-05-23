@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallente", "TotvsChallente\TotvsChallente.csproj", "{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotvsChallente", "TotvsChallente\TotvsChallente.csproj", "{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.Business", "TotvsChallenge.Business\TotvsChallenge.Business.csproj", "{379E7554-38A2-4EC5-852C-000C67F3BD44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.Domain", "TotvsChallenge.Domain\TotvsChallenge.Domain.csproj", "{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.DataAccess", "TotvsChallenge.DataAccess\TotvsChallenge.DataAccess.csproj", "{803D0261-DB80-40E2-8ECF-7B597C955CBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379E7554-38A2-4EC5-852C-000C67F3BD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379E7554-38A2-4EC5-852C-000C67F3BD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379E7554-38A2-4EC5-852C-000C67F3BD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379E7554-38A2-4EC5-852C-000C67F3BD44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
