@@ -15,6 +15,8 @@ using TotvsChallenge.DataAccess;
 using Swashbuckle.AspNetCore.Swagger;
 using TotvsChallenge.Business.Services.Interface;
 using TotvsChallenge.Business.Services.Service;
+using TotvsChallenge.DataAccess.Repository.Interface;
+using TotvsChallenge.DataAccess.Repository.Repo;
 
 namespace TotvsChallente
 {
@@ -43,6 +45,10 @@ namespace TotvsChallente
 
             #region Services
             services.AddScoped<IMonedaService, MonedaService>();
+            #endregion
+
+            #region Repository
+            services.AddScoped<ITransaccionRepository, TransaccionRepository>();
             #endregion
         }
 
