@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TotvsChallenge.DataAccess;
 using Swashbuckle.AspNetCore.Swagger;
+using TotvsChallenge.Business.Services.Interface;
+using TotvsChallenge.Business.Services.Service;
 
 namespace TotvsChallente
 {
@@ -38,6 +40,10 @@ namespace TotvsChallente
                 c.CustomSchemaIds(x => x.FullName);
                 c.DescribeAllEnumsAsStrings();
             });
+
+            #region Services
+            services.AddScoped<IMonedaService, MonedaService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
