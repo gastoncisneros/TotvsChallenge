@@ -22,5 +22,7 @@ namespace TotvsChallente.Controllers
         [HttpPost]
         public string Pagar([FromBody] PagoDTO pago)
             => _monedaService.Pagar(pago);
+        
+
     }
 }

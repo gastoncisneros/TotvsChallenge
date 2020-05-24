@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,21 +7,24 @@ using TotvsChallenge.Business.Services.Interface;
 using TotvsChallenge.DataAccess.Repository.Interface;
 using TotvsChallenge.Domain;
 using TotvsChallenge.Domain.DTO;
+using TotvsChallenge.Domain.Options;
 
 namespace TotvsChallenge.Business.Services.Service
 {
     public class MonedaService : IMonedaService
     {
         private readonly ITransaccionRepository _transaccionRepository;
+        private readonly IOptions<MonedasOptions> _monedasOptions;
 
-        public MonedaService(ITransaccionRepository transaccionRepository)
+        public MonedaService(ITransaccionRepository transaccionRepository, IOptions<MonedasOptions> monedasOptions)
         {
             _transaccionRepository = transaccionRepository;
+            _monedasOptions = monedasOptions;
         }
 
         public string Pagar(PagoDTO pago)
         {
-            int[] monedas = {1,2,5,10, 20, 50, 100 };
+            int[] monedas = _monedasOptions.Value.Monedas;
 
             var montoVuelto = pago.CantidadPagada - pago.CantidadAPagar;
 

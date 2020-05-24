@@ -17,6 +17,7 @@ using TotvsChallenge.Business.Services.Interface;
 using TotvsChallenge.Business.Services.Service;
 using TotvsChallenge.DataAccess.Repository.Interface;
 using TotvsChallenge.DataAccess.Repository.Repo;
+using TotvsChallenge.Domain.Options;
 
 namespace TotvsChallente
 {
@@ -34,7 +35,8 @@ namespace TotvsChallente
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))).AddOptions();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+            
+            services.Configure<MonedasOptions>(Configuration.GetSection("MonedasOptions"));
 
             services.AddSwaggerGen(c =>
             {
