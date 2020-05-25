@@ -5,11 +5,15 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotvsChallente", "TotvsChallente\TotvsChallente.csproj", "{9068098C-B3B4-4869-9D6F-CFF9ACAE1E94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.Business", "TotvsChallenge.Business\TotvsChallenge.Business.csproj", "{379E7554-38A2-4EC5-852C-000C67F3BD44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotvsChallenge.Business", "TotvsChallenge.Business\TotvsChallenge.Business.csproj", "{379E7554-38A2-4EC5-852C-000C67F3BD44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.Domain", "TotvsChallenge.Domain\TotvsChallenge.Domain.csproj", "{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotvsChallenge.Domain", "TotvsChallenge.Domain\TotvsChallenge.Domain.csproj", "{0A9C4966-C4A5-42B0-9153-FF4D144C5F7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.DataAccess", "TotvsChallenge.DataAccess\TotvsChallenge.DataAccess.csproj", "{803D0261-DB80-40E2-8ECF-7B597C955CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TotvsChallenge.DataAccess", "TotvsChallenge.DataAccess\TotvsChallenge.DataAccess.csproj", "{803D0261-DB80-40E2-8ECF-7B597C955CBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0B1B4B60-2068-45E6-9BEA-B8587DFC385A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotvsChallenge.PagoTest", "TotvsChallenge.PagoTest\TotvsChallenge.PagoTest.csproj", "{F8012147-BBDE-4209-BDD3-AAF71EAE681F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{803D0261-DB80-40E2-8ECF-7B597C955CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8012147-BBDE-4209-BDD3-AAF71EAE681F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8012147-BBDE-4209-BDD3-AAF71EAE681F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8012147-BBDE-4209-BDD3-AAF71EAE681F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8012147-BBDE-4209-BDD3-AAF71EAE681F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8012147-BBDE-4209-BDD3-AAF71EAE681F} = {0B1B4B60-2068-45E6-9BEA-B8587DFC385A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A38A238-DDE9-44CD-80E8-BEF854E10E0A}

@@ -70,7 +70,7 @@ namespace TotvsChallenge.Business.Services.Service
                     if ((solucionInt + monedas[i]) <= monto)
                     {
                         solucionInt = solucionInt + monedas[i];
-                        solucion += " Una moneda de : " + monedas[i];
+                        solucion += " Una moneda de : " + monedas[i] + ", ";
                     }
                     else
                     {
