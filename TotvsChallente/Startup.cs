@@ -18,6 +18,8 @@ using TotvsChallenge.Business.Services.Service;
 using TotvsChallenge.DataAccess.Repository.Interface;
 using TotvsChallenge.DataAccess.Repository.Repo;
 using TotvsChallenge.Domain.Options;
+using TotvsChallenge.Business.DataValidation;
+using FluentValidation.AspNetCore;
 
 namespace TotvsChallente
 {
@@ -34,7 +36,11 @@ namespace TotvsChallente
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))).AddOptions();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(opt =>
+            {
+                //Agrego Fluent Validation
+                opt.Filters.Add(typeof(ValidationActionFilter));
+            }).AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<Startup>()); ;
             
             services.Configure<MonedasOptions>(Configuration.GetSection("MonedasOptions"));
 

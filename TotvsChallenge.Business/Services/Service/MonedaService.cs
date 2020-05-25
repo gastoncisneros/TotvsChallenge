@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TotvsChallenge.Business.DataValidation;
 using TotvsChallenge.Business.Services.Interface;
 using TotvsChallenge.DataAccess.Repository.Interface;
 using TotvsChallenge.Domain;
