@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TotvsChallenge.Business.DataValidation;
 using TotvsChallenge.Business.Services.Interface;
@@ -23,17 +24,36 @@ namespace TotvsChallenge.Business.Services.Service
             _monedasOptions = monedasOptions;
         }
 
-        public string Pagar(PagoDTO pago)
+        public VueltoDTO Pagar(PagoDTO pago)
         {
+            VueltoDTO vuelto = new VueltoDTO();
+            PagoValidator validationRules = new PagoValidator(_monedasOptions);
+
+            ValidateGeneral(validationRules, pago, vuelto);
+            if (vuelto.Errors.Count() > 0)
+                return vuelto;
+
             int[] monedas = _monedasOptions.Value.Monedas;
+            Array.Sort(monedas);
 
             var montoVuelto = pago.CantidadPagada - pago.CantidadAPagar;
 
             GuardarTransaccion(pago, montoVuelto);
 
-            string cantidadDeMonedas = DarVuelto(monedas, montoVuelto);
+            vuelto.Vuelto = DarVuelto(monedas, montoVuelto);
+            vuelto.IsSuccess = true;
+            return vuelto;
+        }
 
-            return cantidadDeMonedas;
+        public void ValidateGeneral(PagoValidator validator, PagoDTO pago, VueltoDTO vuelto)
+        {
+            var errors = validator.Validate(pago);
+            vuelto.Errors = errors.Errors.Select(x => new ErrorDS
+            {
+                Descr = x.ErrorMessage,
+                ParentKey = x.ErrorCode,
+                Key = x.PropertyName
+            }).ToArray();
         }
 
         private string DarVuelto(int[] monedas, int monto)

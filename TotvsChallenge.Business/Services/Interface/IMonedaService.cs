@@ -8,6 +8,6 @@ namespace TotvsChallenge.Business.Services.Interface
 {
     public interface IMonedaService
     {
-        string Pagar(PagoDTO pago);
+        VueltoDTO Pagar(PagoDTO pago);
     }
 }

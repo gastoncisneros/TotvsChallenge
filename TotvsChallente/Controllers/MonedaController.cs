@@ -21,23 +21,11 @@ namespace TotvsChallente.Controllers
         }
 
         [HttpPost]
-        public IActionResult Pagar([FromBody] PagoDTO pago)
+        public JsonResult Pagar([FromBody] PagoDTO pago)
         {
-            PagoValidator validationRules = new PagoValidator();
-            var errors = validationRules.Validate(pago);
-            if (errors.Errors.Count > 0)
-            {
-                return Json(errors.Errors.Select(x => x.ErrorMessage));
-            }
-            else
-            {
-                var result = _monedaService.Pagar(pago);
-                if (!result.Any())
-                {
-                    return NotFound(pago);
-                }
-                return Ok(result);
-            }
+            var result = _monedaService.Pagar(pago);
+            return Json(result);
+            
         }
         
 
