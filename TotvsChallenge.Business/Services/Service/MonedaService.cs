@@ -41,6 +41,7 @@ namespace TotvsChallenge.Business.Services.Service
             GuardarTransaccion(pago, montoVuelto);
 
             vuelto.Vuelto = DarVuelto(monedas, montoVuelto);
+
             vuelto.IsSuccess = true;
             return vuelto;
         }
@@ -61,6 +62,7 @@ namespace TotvsChallenge.Business.Services.Service
             int i = 0;
             int solucionInt = 0;
             string solucion = "";
+            List<int> numbers = new List<int>();
 
             while (solucionInt != monto)
             {
@@ -70,13 +72,20 @@ namespace TotvsChallenge.Business.Services.Service
                     if ((solucionInt + monedas[i]) <= monto)
                     {
                         solucionInt = solucionInt + monedas[i];
-                        solucion += " Una moneda de : " + monedas[i] + ", ";
+                        numbers.Add(monedas[i]);
                     }
                     else
                     {
                         i = i - 1;
                     }
                 }
+            }
+
+            var cantidadMonedas = numbers.GroupBy(x => x);
+            foreach (var key in cantidadMonedas) 
+            {
+                var coin = key.Count() > 1 ? " monedas de " : " moneda de ";
+                solucion += key.Count() + coin + key.Key.ToString() + ", ";
             }
 
             return solucion;
